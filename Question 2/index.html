@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="top-nav-bar">
+                <div>Logo</div>
+                <div id='top-bar-options' class="right-align">
+                    <div class="nav-item">Home</div>
+                    <div class="nav-item">About us</div>
+                    <div class="nav-item">Products</div>
+                    <div class="nav-item">Contact us</div>
+                </div>
+            </div>
+            <div class="lower-section">
+                <div id="side-nav-bar">
+                    <div class="nav-item">Item 1</div>
+                    <div class="nav-item">Item 2</div>
+                    <div class="nav-item">Item 3</div>
+                    <div class="nav-item">Item 4</div>
+                    <div class="nav-item">Item 5</div>
+                    <div class="nav-item">Item 6</div>
+                    <div class="nav-item">Item 7</div>
+                    <div class="nav-item">Item 8</div>
+                    <div class="nav-item">Item 9</div>
+                </div>
+                <div class="main-content">
+                    <div class="title">Information about us</div>
+                    <div class="image-block-container" id="image-blocks">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            window.addEventListener('load', function () {
+                drawImageBlocks(3)
+            })
+            function drawImageBlocks(blocksToDraw) {
+                textBlockTemplate = "<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<h3>Read more...</h3></div>"
+                imageBlockTemplate = "<div><img class='test-image' src='https://images.squarespace-cdn.com/content/v1/63bc4ce8b151d07778aaaf92/55d039d7-efc2-4b59-8d52-15dda0d0ab68/iStock-1337494494.jpg'></div>"
+
+                for(let i = 0; i < blocksToDraw; i++) {
+                    blockToDraw = "<div>"
+                        if(i % 2 == 0) {
+                            blockToDraw += imageBlockTemplate + textBlockTemplate + "</div>"
+                        } else {
+                            blockToDraw += textBlockTemplate + imageBlockTemplate + "</div>"
+                        }
+                    document.getElementById("image-blocks").innerHTML = document.getElementById("image-blocks").innerHTML + blockToDraw
+                }
+            }
+        </script>
+    </body>
+</html>
